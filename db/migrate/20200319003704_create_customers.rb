@@ -4,8 +4,8 @@ class CreateCustomers < ActiveRecord::Migration[5.2]
       t.string id: false
       t.string :first_name
       t.string :last_name
-      t.string :created_at
-      t.string :updated_at
+      t.timestamp :created_at
+      t.timestamp :updated_at
 
       t.timestamps
     end
