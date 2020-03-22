@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
 
+      namespace :merchants do
+        get '/find_ones', to: 'find_ones#show'
+      end
+
       resources :merchants, except: [:new, :edit] do
         resources :items, only: [:index]
       end
@@ -10,6 +14,7 @@ Rails.application.routes.draw do
       resources :items, except: [:new, :edit] do
         get '/merchant', to: 'merchants#show'
       end
+
 
     end
   end
