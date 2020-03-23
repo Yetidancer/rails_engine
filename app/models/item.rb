@@ -1,5 +1,8 @@
 class Item < ApplicationRecord
   belongs_to :merchant, dependent: :destroy
+  has_many :invoice_items
+  has_many :invoices, through: :invoice_items
+  has_many :transactions, through: :invoices
 
   scope :filter_by_name, -> (name) { where("lower(name) like ?", "%#{name.downcase}%")}
   scope :filter_by_description, -> (description) { where("lower(description) like ?", "%#{description.downcase}%")}

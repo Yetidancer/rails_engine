@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :invoice_item do
-    customer_id { rand(0..10) }
+  factory :invoice do
+    association :customer, factory: :random_customer
     association :merchant, factory: :random_merchant
     status { "shipped" }
     created_at { DateTime.now }
