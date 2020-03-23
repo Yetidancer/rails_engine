@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :merchant do
-    name { "Ball Factory" }
+    name { Faker::TvShows::Simpsons.character  }
     created_at { DateTime.now }
     updated_at { DateTime.now }
   end
